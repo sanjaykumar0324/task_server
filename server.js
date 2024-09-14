@@ -18,8 +18,9 @@ app.use(express.json());
 
 // routes
 import testRoute from "./routes/testRoute.js"
-
+import todoRoutes from "./routes/todoRoutes.js"
 app.use('/api/v1',testRoute);
+app.use('/api/v1/todo',todoRoutes)
 
 
 app.get('/',(req,res)=>{
