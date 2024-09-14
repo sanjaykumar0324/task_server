@@ -25,14 +25,14 @@ export const createTodoController = async (req, res) => {
         message: "Please Provide all fields",
       });
     }
-    await TodoModel.create({
+    const todo =await TodoModel.create({
         title,
         task
     })
     res.status(201).send({
         success: true,
         message: "Todo Created Successfully",
-        
+        todo
       });
   } catch (error) {
     res.status(500).send({
